@@ -12,22 +12,22 @@ export default class Topnav extends React.Component {
                 <nav className="nav navbar-nav">
                 <ul className=" navbar-right">
                   <li className="nav-item dropdown open" >
-                    <a href="javascript:;" className="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                    <a  className="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                       <img src="images/img.jpg" alt="" />John Doe
                     </a>
                     <div className="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                      <a className="dropdown-item"  href="javascript:;"> Profile</a>
-                        <a className="dropdown-item"  href="javascript:;">
+                      <a className="dropdown-item"  > Profile</a>
+                        <a className="dropdown-item"  >
                           <span className="badge bg-red pull-right">50%</span>
                           <span>Settings</span>
                         </a>
-                    <a className="dropdown-item"  href="javascript:;">Help</a>
+                    <a className="dropdown-item"  >Help</a>
                       <a className="dropdown-item"  href="login.html"><i className="fa fa-sign-out pull-right"></i> Log Out</a>
                     </div>
                   </li>
   
                   <li role="presentation" className="nav-item dropdown open">
-                    <a href="javascript:;" className="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                    <a  className="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                       <i className="fa fa-envelope-o"></i>
                       <span className="badge bg-green">6</span>
                     </a>

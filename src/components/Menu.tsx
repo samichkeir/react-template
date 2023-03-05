@@ -2,6 +2,17 @@ import React from "react";
 
 export default class Menu extends React.Component
  {
+  renderMenuScript(){
+    const script = document.createElement("script");
+    script.src = "/js/menu.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }
+
+  componentDidMount(){
+    this.renderMenuScript();
+  }
+
    render(){
     return(
         <div className="col-md-3 left_col">
@@ -21,11 +32,7 @@ export default class Menu extends React.Component
                 <h2>John Doe</h2>
               </div>
             </div>
-         
-
             <br />
-
-           
             <div id="sidebar-menu" className="main_menu_side hidden-print main_menu">
               <div className="menu_section">
                 <h3>General</h3>
@@ -122,12 +129,9 @@ export default class Menu extends React.Component
                         </li>
                     </ul>
                   </li>                  
-                  <li><a href="javascript:void(0)"><i className="fa fa-laptop"></i> Landing Page <span className="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
-
             </div>
-            
           </div>
         </div>
     )

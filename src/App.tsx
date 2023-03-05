@@ -11,7 +11,7 @@ export default class App extends React.Component {
       <div>
         <Menu />
         <Topnav />
-        <Content />
+        {/* <Content /> */}
         <Footersection />
       </div>
 
