@@ -5,10 +5,9 @@
 
 import React from "react";
 import Footersection from "./components/Footer";
-import Menu from "./components/Menu";
+import Menu from "./components/Menu/Menu";
 import Topnav from "./components/Topnav";
 import Content from "./components/Content";
-
 
 
 export default class App extends React.Component {
@@ -18,7 +17,7 @@ export default class App extends React.Component {
       <div>
         <Menu />
         <Topnav />
-        {/* <Content /> */}
+        <Content />
         <Footersection />
       </div>
 
