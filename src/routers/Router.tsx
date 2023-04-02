@@ -1,5 +1,8 @@
 import OneRoute from "../interfaces/OneRoute";
 import Users from "../Pages/Users/Users";
+import Dashboard from "../components/Dashboard";
+
+
 
 const allroutes:OneRoute[] = [
     {
@@ -27,7 +30,7 @@ const allroutes:OneRoute[] = [
         name:"Dashboard",
         icon:"fa fa-edit",
         path: "/3",
-        element: <div>Hello world3!</div>,
+        element: <Dashboard />,
     }
 ];
 export default allroutes;
