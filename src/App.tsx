@@ -4,9 +4,9 @@
 
 
 import React from "react";
-import Footersection from "./components/Footer";
+import Footersection from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
-import Topnav from "./components/Topnav";
+import Topnav from "./components/Header/Topnav";
 import Content from "./components/Content";
 
 

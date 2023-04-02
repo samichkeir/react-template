@@ -1,4 +1,5 @@
 import OneRoute from "../interfaces/OneRoute";
+import Users from "../Pages/Users/Users";
 
 const allroutes:OneRoute[] = [
     {
@@ -8,7 +9,7 @@ const allroutes:OneRoute[] = [
             {
                 name:"Home",
                 path: "/",
-                element: <div>Hello world!</div>,
+                element: <Users />,
             },
             {
                 name:"Home",
