@@ -12,7 +12,7 @@ export default   (props:any) => {
     const [currentPage, setCurrentPage] = useState(1);
     // const [deleted, setDeleted] = useState([]);
   
-    const fetchUsers = async (page = 1, size = perPage) => {
+    const fetchData = async (page = 1, size = perPage) => {
       setLoading(true);
   
       const response = await axios.get(
@@ -24,56 +24,30 @@ export default   (props:any) => {
       setLoading(false);
     };
   
+   
     useEffect(() => {
-      fetchUsers(1);
-    }, []);
-  
-    const handleDelete = useCallback(
-    (row:any) => async () => {
-        console.log(row)
-        await axios.delete(`${props.url}/${row.id}`);
-        fetchUsers(currentPage,perPage);
-      },
-      [currentPage, perPage, totalRows]
-    );
-  
+      fetchData(1);
+    }, [props.count]);
+
     const columns = useMemo(
-      () => [
-        {
-          name: "First Name",
-          selector: (row:any) => row.first_name ,
-          sortable: true
-        },
-        {
-          name: "Last Name",
-          selector: (row:any) => row.last_name ,
-          sortable: true
-        },
-        {
-          name: "Email",
-          selector: (row:any) => row.email ,
-          sortable: true
-        },
-        {
-          cell: (row:any) => <button onClick={handleDelete(row)}>Delete</button>
-        }
-      ],
-      [handleDelete]
+      () => props.cols,
+      [...props.colsMemo]
     );
   
     const handlePageChange = (page: number ) => {
-      fetchUsers(page);
+      fetchData(page);
       setCurrentPage(page);
     };
   
     const handlePerRowsChange = async (newPerPage: number, page: number) => {
-      fetchUsers(page, newPerPage);
+      fetchData(page, newPerPage);
       setPerPage(newPerPage);
     };
-  
+
+    
     return (
       <DataTable
-        title="Users"
+        title={props.title}
         columns={columns}
         data={data}
         progressPending={loading}
