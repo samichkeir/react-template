@@ -1,17 +1,33 @@
 pipeline {
-    agent any
-
+    agent { 
+        node {
+            label 'jenkins-agent-goes-here'
+            }
+      }
     stages {
         stage('Build') {
             steps {
-                 echo 'Starting the build stage.1..'
+                echo "Building.."
+                sh '''
+                echo "doing build stuff.."
+                '''
             }
         }
-        stage('deploy') {
+        stage('Test') {
             steps {
-                 echo 'Starting the deploy stage.1..'
+                echo "Testing.."
+                sh '''
+                echo "doing test stuff..
+                '''
             }
         }
-     
+        stage('Deliver') {
+            steps {
+                echo 'Deliver....'
+                sh '''
+                echo "doing delivery stuff.."
+                '''
+            }
+        }
     }
 }
