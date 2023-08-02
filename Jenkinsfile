@@ -1,9 +1,8 @@
 pipeline {
-    agent { 
-        node {
-            label 'jenkins-agent-goes-here'
-            }
-      }
+    agent  any
+    triggers {
+        pollSCM '* * * * *'
+    }
     stages {
         stage('Build') {
             steps {
@@ -17,7 +16,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                echo "doing test stuff..
+                echo "doing test stuff.."
                 '''
             }
         }
